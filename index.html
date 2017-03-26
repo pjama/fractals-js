@@ -1,0 +1,58 @@
+
+<!DOCTYPE HTML>
+<html>
+    <meta charset="utf-8">
+    <title>IFS Fractal</title>
+    <head>
+        <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="wrapper">
+          <div id="controls">
+              <table>
+                  <tr>
+                    <!--  0.930 0.675 0.615 0.220 0.160 -->
+                    <!--  {m:1.000,a:0.750,b:0.550,c:0.240,d:0.160} -->
+                    <!--  0.9 0.725 0.67 0.315 0.11 -->
+                    <!--  1 0.73 0.665 0.355 0.145 -->
+                      <td>Master</td>
+                      <td><input id="master_slider" type="range" min ="0.01" max="1.0" step ="0.010" value="0.90" onInput="onControlChange()"/></td>
+                  </tr>
+                  <tr>
+                      <td>Ratio A</td>
+                      <td><input id="ratio_a_slider" type="range" min ="0.4" max="0.8" step ="0.005" value="0.73" onInput="onControlChange()"/></td>
+                  </tr>
+                  <tr>
+                      <td>Ratio B</td>
+                      <td><input id="ratio_b_slider" type="range" min ="0.4" max="0.8" step ="0.005" value="0.670" onInput="onControlChange()"/></td>
+                  </tr>
+                  <tr>
+                      <td>Angle A</td>
+                      <td><input id="angle_a_slider" type="range" min ="0.01" max="0.9" step ="0.005" value="0.355" onInput="onControlChange()"/></td>
+                  </tr>
+                  <tr>
+                      <td>Angle B</td>
+                      <td><input id="angle_b_slider" type="range" min ="0.01" max="0.9" step ="0.005" value="0.140" onInput="onControlChange()"/></td>
+                  </tr>
+              </table>
+          </div>
+          <canvas id="canvas"></canvas>
+        </div>
+        <script src="app.js"></script>
+        <script>
+            // updateControlValues();
+            // updateFractal();
+            var start     = 0.05,
+                finish    = 0.95,
+                duration  = 5000,
+                steps     = 200;
+            animate(start, finish, duration, steps);
+            /*
+             * It is indeed fascinating how small, individual, changes to an
+             * [Iterated Function System](https://en.wikipedia.org/wiki/Iterated_function_system)
+             * can have such dramatic influence on the system as a whole!
+             */
+        </script>
+    </body>
+</html>
+
